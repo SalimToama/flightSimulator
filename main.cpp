@@ -7,12 +7,6 @@ using namespace std;
 
 class Shunting {
 public:
-    /*
-    static string toPostFix(string st) {
-        stack<string> stack;
-        string output;
-
-    } */
     static bool isLeftParen(char ch) {
         return ch == '(';
     }
@@ -51,7 +45,7 @@ public:
                 return true;
                 break;
             default:
-                return isLeftParen(ch) || isRightParen(ch);
+                return false;
                 break;
         }
     }
@@ -263,8 +257,6 @@ int main() {
     Shunting::spacer(husni);
     husni = Shunting::toPostfix(husni);
     cout << husni << endl;
-    // 3 4 * 12 6 - /
-    string husni3 = "6 9 +";
     cout << Shunting::evaluate(husni) << endl;
     return 1;
 }
